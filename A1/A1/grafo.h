@@ -1,5 +1,6 @@
 #ifndef GRAFO_H
 #define GRAFO_H
+#include <stdbool.h>
 #include "aresta.h"
 
 typedef struct {

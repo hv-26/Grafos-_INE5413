@@ -5,63 +5,6 @@
 #include <float.h>
 #include "grafo.h"
 
-int main()
-{
-  grafo_t* g = ler("teste.txt");
-  imprimir_grafo(g);
-  //testando as funções que medem a cardinalidade de V e E
-  unsigned int card_V = qtdVertices(g);
-  unsigned int card_E = qtdArestas(g);
-  printf("Quantidade de Vértices: %d\n", card_V);
-  printf("Quantidade de Arestas: %d\n", card_E);
-  //testando as funções que dizem respeito aos vértices
-  vertice_t** conj_vertices = g->conj_vertices;
-  vertice_t** vizinhanca;
-  vertice_t* vertice_atual;
-  char* label_vertice_atual;
-  unsigned int grau_vertice_atual;
-
-  for (int i=0; i<card_V; i++)
-  {
-    vertice_atual = conj_vertices[i];
-    label_vertice_atual = rotulo(vertice_atual);
-    grau_vertice_atual = grau(vertice_atual);
-    printf("Grau do vértice %s: %d\n", label_vertice_atual, grau_vertice_atual);
-    printf("Vizinhos do vértice %s:\n", label_vertice_atual);
-    vizinhanca = vizinhos(vertice_atual);
-    for (int j=0; j<grau_vertice_atual; j++)
-    {
-      printf("Vizinho [%d] de %s: \n", j, label_vertice_atual);
-      imprimir_vertice(vizinhanca[j]);
-    }
-  }
-
-  //testando as funções que dizem respeito às arestas
-  aresta_t** conj_arestas = g->conj_arestas;
-  aresta_t* aresta_atual;
-  vertice_t* u;
-  vertice_t* v;
-  char rotulo_aresta[6] = "";
-  float peso_aresta;
-  for (int i=0; i<card_E; i++)
-  {
-    aresta_atual = conj_arestas[i];
-    u = aresta_atual->vertice_1;
-    v = aresta_atual->vertice_2;
-    strncpy(rotulo_aresta, aresta_atual->rotulo, 7);
-    //rotulo_aresta = aresta_atual->rotulo;
-    if (!haAresta(g, u, v))
-    {
-      printf("ERRO: ARESTA %s NÃO DETECTADA!\n", rotulo_aresta);
-      return 1;
-    }
-    peso_aresta = peso(g, u, v);
-    printf("Aresta atual: %s, com peso %f\n", rotulo_aresta, peso_aresta);
-  }
-  return 0;
-}
-
-
 grafo_t* ler(char* filename)
 {
   //lista de ingredientes do grafo
