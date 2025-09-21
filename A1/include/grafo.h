@@ -1,7 +1,7 @@
 #ifndef GRAFO_H
 #define GRAFO_H
 #include <stdbool.h>
-#include "aresta.h"
+#include "include/aresta.h"
 
 typedef struct {
   vertice_t** conj_vertices;

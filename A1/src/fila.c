@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-#include "nodo.h"
-#include "fila.h"
+#include "../nodo.h"
+#include "../fila.h"
 
 
 fila_t* criar_fila(unsigned int primeiro_elemento)

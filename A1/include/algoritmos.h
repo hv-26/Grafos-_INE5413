@@ -9,6 +9,5 @@ typedef struct {
 
 //Assinatura da função que implementa a busca em largura
 bfs_t* inicializar_bfs(unsigned int num_vertices, float* distancias, unsigned int* ancestrais);
-void bfs(grafo_t* g, vertice_t* s);
-
+void bfs(const grafo_t *g, const vertice_t *s);
 #endif

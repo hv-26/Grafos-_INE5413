@@ -3,7 +3,7 @@
 #include <stdbool.h>
 #include <string.h>
 #include <float.h>
-#include "grafo.h"
+#include "../grafo.h"
 
 grafo_t* ler(char* filename)
 {

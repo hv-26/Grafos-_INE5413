@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "nodo.h"
+#include "../nodo.h"
 
 /*int main()
 {
