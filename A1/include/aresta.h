@@ -5,7 +5,7 @@
 //Estrutura descrevendo uma aresta
 
 typedef struct {
-  unsigned int idd[2];
+  unsigned int id[2];
   vertice_t* vertice_1;
   vertice_t* vertice_2;
   float peso;

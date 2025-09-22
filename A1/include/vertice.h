@@ -6,7 +6,7 @@
 typedef struct vertice_t vertice_t;
 struct vertice_t
 {
-  unsigned int idd;
+  unsigned int id;
   unsigned int grau;
   char* rotulo;
   vertice_t** vizinhos;

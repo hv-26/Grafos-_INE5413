@@ -1,6 +1,5 @@
 #ifndef FILA_H
 #define FILA_H
-#include <stdbool.h>
 #include "nodo.h"
 
 //Estrutura descrevendo uma fila implementada via lista ligada
